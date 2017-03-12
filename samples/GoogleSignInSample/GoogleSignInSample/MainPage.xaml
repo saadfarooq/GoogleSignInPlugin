@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:local="clr-namespace:GoogleSignInSample"
+             xmlns:plugin="clr-namespace:GoogleSignIn.Plugin;assembly=GoogleSignIn.Plugin.Abstractions"
+			 x:Class="GoogleSignInSample.MainPage">
+
+    <StackLayout
+			Orientation="Vertical"
+			VerticalOptions="Center" 
+		   HorizontalOptions="Center" >
+
+        <Label Text="Welcome to Xamarin Forms!" />
+
+        <plugin:GoogleSignInButton
+			x:Name="SignInButton"
+			Command="{Binding SignInCommand}"
+            ClientIdiOS="611830733386-kstv0il8jb5c1ag82cj4p6lhhd9m235m.apps.googleusercontent.com"
+			Size="Standard"
+			ColorScheme="Light"/>
+
+    </StackLayout>
+
+</ContentPage>

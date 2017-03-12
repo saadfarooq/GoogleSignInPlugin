@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata minClientVersion="2.8.1">
+    <id>Xam.Plugin.GoogleSignIn</id>
+    <version>$version$</version>
+    <title>Cross-platform Google Sign In for Xamarin</title>
+    <authors>Saad Farooq</authors>
+    <owners>Saad Farooq</owners>
+    <licenseUrl>https://github.com/saadfarooq/GoogleSignInPlugin/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/saadfarooq/GoogleSignInPlugin</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/saadfarooq/GoogleSignInPlugin/master/art/icon.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>
+      Use a branded Google SignIn button in your Xamarin iOS and Android apps
+    </description>
+    <releaseNotes>
+      See: https://github.com/saadfarooq/GoogleSignInPlugin/blob/master/CHANGELOG.md
+    </releaseNotes>
+    <summary>Use Google SignIn flow natively in your Xamarin apps</summary>
+    <tags>xamarin, pcl, xam.pcl, google, auth, plugin for xamarin, plugins, xamarin.mac, xamarin.android, xamarin.ios,  windows phone, winphone, wp8, winrt, android, xamarin.forms, ios</tags>
+    <dependencies>
+      <group targetFramework="MonoAndroid10">
+        <dependency id="Xamarin.GooglePlayServices.Auth" version="29.0.0.2" />
+        <dependency id="Xamarin.GooglePlayServices.Plus" version="29.0.0.2" />
+      </group>
+      <group targetFramework="Xamarin.iOS10">
+        <dependency id="Xamarin.Google.iOS.SignIn" version="4.0.1.1" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="nuget\readme.txt" target="readme.txt" />
+
+    <!--Core-->
+    <file src="src\GoogleSignIn.Plugin.Abstractions\bin\Release\GoogleSignIn.Plugin.Abstractions.dll" target="lib\portable-net45+wp80+win8+wpa81\GoogleSignIn.Plugin.Abstractions.dll" />
+    <file src="src\GoogleSignIn.Plugin.Abstractions\bin\Release\GoogleSignIn.Plugin.Abstractions.xml" target="lib\portable-net45+wp80+win8+wpa81\GoogleSignIn.Plugin.Abstractions.xml" />
+    <file src="src\GoogleSignIn.Plugin.Abstractions\bin\Release\GoogleSignIn.Plugin.Abstractions.pdb" target="lib\portable-net45+wp80+win8+wpa81\GoogleSignIn.Plugin.Abstractions.pdb" />
+
+    <!--Xamarin.Android-->
+    <file src="src\GoogleSignIn.Plugin.Android\bin\Release\GoogleSignIn.Plugin.Android.dll" target="lib\MonoAndroid10\GoogleSignIn.Plugin.Android.dll" />
+    <file src="src\GoogleSignIn.Plugin.Android\bin\Release\GoogleSignIn.Plugin.Android.xml" target="lib\MonoAndroid10\GoogleSignIn.Plugin.Android.xml" />
+    <file src="src\GoogleSignIn.Plugin.Android\bin\Release\GoogleSignIn.Plugin.Android.pdb" target="lib\MonoAndroid10\GoogleSignIn.Plugin.Android.pdb" />
+    <file src="src\GoogleSignIn.Plugin.Abstractions\bin\Release\GoogleSignIn.Plugin.Abstractions.dll" target="lib\MonoAndroid10\GoogleSignIn.Plugin.Abstractions.dll" />
+    <file src="src\GoogleSignIn.Plugin.Abstractions\bin\Release\GoogleSignIn.Plugin.Abstractions.xml" target="lib\MonoAndroid10\GoogleSignIn.Plugin.Abstractions.xml" />
+    <file src="src\GoogleSignIn.Plugin.Abstractions\bin\Release\GoogleSignIn.Plugin.Abstractions.pdb" target="lib\MonoAndroid10\GoogleSignIn.Plugin.Abstractions.pdb" />
+
+    <!--Xamarin.iOS Unified-->
+    <file src="src\GoogleSignIn.Plugin.iOS\bin\iPhone\Release\GoogleSignIn.Plugin.iOS.dll" target="lib\Xamarin.iOS10\GoogleSignIn.Plugin.iOS.dll" />
+    <file src="src\GoogleSignIn.Plugin.iOS\bin\iPhone\Release\GoogleSignIn.Plugin.iOS.xml" target="lib\Xamarin.iOS10\GoogleSignIn.Plugin.iOS.xml" />
+    <!--<file src="src\GoogleSignIn.Plugin.iOS\bin\iPhone\Release\GoogleSignIn.Plugin.iOS.pdb" target="lib\Xamarin.iOS10\GoogleSignIn.Plugin.pdb" />-->
+    <file src="src\GoogleSignIn.Plugin.Abstractions\bin\Release\GoogleSignIn.Plugin.Abstractions.dll" target="lib\Xamarin.iOS10\GoogleSignIn.Plugin.Abstractions.dll" />
+    <file src="src\GoogleSignIn.Plugin.Abstractions\bin\Release\GoogleSignIn.Plugin.Abstractions.xml" target="lib\Xamarin.iOS10\GoogleSignIn.Plugin.Abstractions.xml" />
+    <file src="src\GoogleSignIn.Plugin.Abstractions\bin\Release\GoogleSignIn.Plugin.Abstractions.pdb" target="lib\Xamarin.iOS10\GoogleSignIn.Plugin.Abstractions.pdb" />
+
+  </files>
+</package>
