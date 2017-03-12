@@ -1,5 +1,5 @@
-#addin nuget:https://nuget.org/api/v2/?package=Cake.FileHelpers&version=1.0.3.2
-#addin nuget:https://nuget.org/api/v2/?package=Cake.Xamarin&version=1.2.3
+#addin nuget:https://nuget.org/api/v2/?package=Cake.FileHelpers&version=1.0.4
+#addin nuget:https://nuget.org/api/v2/?package=Cake.Xamarin&version=1.3.0.14
 
 var TARGET = Argument ("target", Argument ("t", "Default"));
 var version = EnvironmentVariable ("APPVEYOR_BUILD_VERSION") ?? Argument("version", "0.0.99");
@@ -32,10 +32,7 @@ var BuildAction = new Action<Dictionary<string, string>> (solutions =>
 				
 				Information ("RunningOn: {0}", "Windows");
 
-				NuGetRestore (sln.Key, new NuGetRestoreSettings
-                {
-					ToolPath = "./tools/nuget3.exe"
-				});
+				NuGetRestore (sln.Key);
 
 				// Windows Phone / Universal projects require not using the amd64 msbuild
 				MSBuild (sln.Key, c => 
@@ -77,8 +74,7 @@ Task ("NuGet")
 		Version = version,
 		Verbosity = NuGetVerbosity.Detailed,
 		OutputDirectory = "./Build/nuget/",
-		BasePath = "./",
-		ToolPath = "./tools/nuget3.exe"
+		BasePath = "./"
 	});	
 });
 
