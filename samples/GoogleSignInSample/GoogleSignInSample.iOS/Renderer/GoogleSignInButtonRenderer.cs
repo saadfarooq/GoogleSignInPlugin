@@ -6,6 +6,7 @@ using Foundation;
 using GoogleSignIn.Plugin;
 using GoogleSignIn.Plugin.iOS;
 using System;
+using static GoogleSignIn.Plugin.GoogleSignInButton;
 
 [assembly: ExportRenderer(typeof(GoogleSignInButton), typeof(GoogleSignInButtonRenderer))]
 namespace GoogleSignIn.Plugin.iOS
@@ -27,7 +28,8 @@ namespace GoogleSignIn.Plugin.iOS
             base.OnElementChanged(e);
             if (Control == null)
             {
-                SignIn.SharedInstance.ClientID = this.Element.ServerClientId;
+                SignIn.SharedInstance.ClientID = this.Element.IOSClientId;
+                SignIn.SharedInstance.ServerClientID = Element.ServerClientId;
                 SignInButton signInButton = new SignInButton
                 {
                     ColorScheme = ButtonColorScheme.Dark
@@ -35,10 +37,10 @@ namespace GoogleSignIn.Plugin.iOS
 
                 switch (this.Element.Size)
                 {
-                    case GoogleSignInButton.SizeOptions.IconOnly:
+                    case SizeOptions.IconOnly:
                         signInButton.Style = ButtonStyle.IconOnly;
                         break;
-                    case GoogleSignInButton.SizeOptions.Wide:
+                    case SizeOptions.Wide:
                         signInButton.Style = ButtonStyle.Wide;
                         break;
                     default:
@@ -48,7 +50,7 @@ namespace GoogleSignIn.Plugin.iOS
 
                 switch (this.Element.ColorScheme)
                 {
-                    case GoogleSignInButton.ColorSchemeOptions.Dark:
+                    case ColorSchemeOptions.Dark:
                         signInButton.ColorScheme = ButtonColorScheme.Dark;
                         break;
 
@@ -66,18 +68,42 @@ namespace GoogleSignIn.Plugin.iOS
 
         public void DidSignIn(SignIn signIn, GoogleUser user, NSError error)
         {
-            Console.WriteLine("User: " + user.ToString());
             if (user != null && error == null)
             {
-                if (this.Element.Command != null)
+                Console.WriteLine("User: " + user.ToString());
+                switch (Element.TokenType)
                 {
-                    this.Element.Command.Execute(new GoogleSignInUser()
-                    {
-                        ServerAuthCode = user.ServerAuthCode,
-                        AccessToken = user.Authentication.AccessToken
-                    });
+                    case TokenTypeOptions.AccessToken:
+                        PublishToken(user.Authentication.AccessToken);
+                        break;
+
+                    case TokenTypeOptions.IdToken:
+                        PublishToken(user.Authentication.IdToken);
+                        break;
+
+                    case TokenTypeOptions.ServerAuthCode:
+                        PublishToken(user.ServerAuthCode);
+                        break;
                 }
             }
+            else
+            {
+                Element.OnSignIn(new GoogleSignInEventArgs()
+                {
+                    ErrorString = error.Description
+                });
+            }
+        }
+
+        private void PublishToken(string token)
+        {
+            Element.OnSignIn(new GoogleSignInEventArgs()
+            {
+                user = new GoogleSignInUser()
+                {
+                    Token = token
+                }
+            });
         }
     }
 }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -16,12 +11,18 @@ namespace GoogleSignInSample
         {
             InitializeComponent();
 
-            SignInButton.Command = new Command((signInUser) =>
-            {
-                Debug.WriteLine("SignInUser: {0}", signInUser);
-            });
+            SignInButton.SignInEvent += SignInButton_SignInEvent;
         }
 
-
+        private void SignInButton_SignInEvent(object sender, GoogleSignIn.Plugin.GoogleSignInEventArgs e)
+        {
+            if (e.HasError())
+            {
+                Debug.WriteLine("Error occured signing in: {0}", e.ErrorString);
+            } else
+            {
+                Debug.WriteLine("SignIn Successful: {0}", e.user);
+            }
+        }
     }
 }

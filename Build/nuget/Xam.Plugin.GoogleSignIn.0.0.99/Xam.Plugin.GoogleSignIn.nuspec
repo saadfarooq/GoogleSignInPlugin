@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata minClientVersion="2.8.1">
+    <id>Xam.Plugin.GoogleSignIn</id>
+    <version>0.0.99</version>
+    <title>Cross-platform Google Sign In for Xamarin</title>
+    <authors>Saad Farooq</authors>
+    <owners>Saad Farooq</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://github.com/saadfarooq/GoogleSignInPlugin/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/saadfarooq/GoogleSignInPlugin</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/saadfarooq/GoogleSignInPlugin/master/art/icon.png</iconUrl>
+    <description>Use a branded Google SignIn button in your Xamarin iOS and Android apps</description>
+    <summary>Use Google SignIn flow natively in your Xamarin apps</summary>
+    <releaseNotes>See: https://github.com/saadfarooq/GoogleSignInPlugin/blob/master/CHANGELOG.md</releaseNotes>
+    <tags>xamarin, pcl, xam.pcl, google, auth, plugin for plugins, xamarin.mac, xamarin.android, xamarin.ios, windows phone, winphone, wp8, winrt, android, xamarin.forms, ios</tags>
+    <dependencies>
+      <group targetFramework="MonoAndroid1.0">
+        <dependency id="Xamarin.GooglePlayServices.Auth" version="29.0.0.2" />
+        <dependency id="Xamarin.GooglePlayServices.Plus" version="29.0.0.2" />
+      </group>
+      <group targetFramework="Xamarin.iOS1.0">
+        <dependency id="Xamarin.Google.iOS.SignIn" version="4.0.1.1" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

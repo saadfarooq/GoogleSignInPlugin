@@ -1,5 +1,4 @@
-﻿using System;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace GoogleSignIn.Plugin
@@ -11,7 +10,7 @@ namespace GoogleSignIn.Plugin
     {
         public SizeOptions Size { get; set; }
         public ColorSchemeOptions ColorScheme { get; set; }
-        public string ClientIdiOS { get; set; }
+        public string ServerClientId { get; set; }
 
         public enum SizeOptions
         {

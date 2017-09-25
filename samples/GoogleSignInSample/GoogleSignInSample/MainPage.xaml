@@ -2,22 +2,30 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
 			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 			 xmlns:local="clr-namespace:GoogleSignInSample"
-             xmlns:plugin="clr-namespace:GoogleSignIn.Plugin;assembly=GoogleSignIn.Plugin.Abstractions"
+             xmlns:plugin="clr-namespace:GoogleSignIn.Plugin"
 			 x:Class="GoogleSignInSample.MainPage">
 
     <StackLayout
 			Orientation="Vertical"
 			VerticalOptions="Center" 
-		   HorizontalOptions="Center" >
+		    HorizontalOptions="Center" >
 
         <Label Text="Welcome to Xamarin Forms!" />
 
         <plugin:GoogleSignInButton
 			x:Name="SignInButton"
-			Command="{Binding SignInCommand}"
-            ClientIdiOS="611830733386-kstv0il8jb5c1ag82cj4p6lhhd9m235m.apps.googleusercontent.com"
+            IsVisible="True"
+            ServerClientId="611830733386-ll8ghnrv6a8ums89sbjn1krbd4gsmvld.apps.googleusercontent.com"
+            AndroidClientId="611830733386-mjbimgqg96sk83alacmrge45tptmpkia.apps.googleusercontent.com"
+            IOSClientId="611830733386-5en5rg4o4dkscac3fc81gair1ssinmrk.apps.googleusercontent.com"
+            TokenType="AccessToken"
 			Size="Standard"
 			ColorScheme="Light"/>
+
+        <Button
+            IsEnabled="True"
+            IsVisible="True"
+            Text="SignInButton"/>
 
     </StackLayout>
 

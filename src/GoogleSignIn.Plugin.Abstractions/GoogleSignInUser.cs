@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GoogleSignIn.Plugin
+﻿namespace GoogleSignIn.Plugin
 {
     public class GoogleSignInUser
     {
-        public string ServerAccessToken { get; set; }
+        public string ServerAuthCode { get; set; }
+        public string AccessToken { get; set; }
     }
 }

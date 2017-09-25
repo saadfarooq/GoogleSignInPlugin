@@ -24,7 +24,7 @@
         <dependency id="Xamarin.GooglePlayServices.Plus" version="29.0.0.2" />
       </group>
       <group targetFramework="Xamarin.iOS10">
-        <dependency id="Xamarin.Google.iOS.SignIn" version="4.0.1.1" />
+        <dependency id="Xamarin.Google.iOS.SignIn" version="4.0.2" />
       </group>
     </dependencies>
   </metadata>

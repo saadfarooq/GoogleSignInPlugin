@@ -9,7 +9,6 @@ using Android.Gms.Auth.Api.SignIn;
 using Android.Gms.Common.Apis;
 using Android.Gms.Auth.Api;
 using static Android.Gms.Common.Apis.GoogleApiClient;
-using Xamarin.Forms;
 
 namespace GoogleSignIn.Plugin.Android
 {
@@ -29,7 +28,7 @@ namespace GoogleSignIn.Plugin.Android
             Console.WriteLine("Requesting client id: {0}", clientId);
 
             GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DefaultSignIn)
-                .RequestServerAuthCode(clientId)
+                .RequestIdToken(clientId)
                 .RequestEmail()
                 .Build();
 
@@ -60,14 +59,15 @@ namespace GoogleSignIn.Plugin.Android
                     GoogleSignInAccount acct = result.SignInAccount;
                     Console.WriteLine("Sign in with Google user: {0}", acct);
                     // Get account information
-                    MessagingCenter.Send(this, "Success", new GoogleSignInUser()
-                    {
-                        ServerAccessToken = acct.ServerAuthCode
-                    });
+                    //MessagingCenter.Send(this, "Success", new GoogleSignInUser()
+                    //{
+                    //    ServerAuthCode = acct.IdToken
+                    //});
                 }
                 else
                 {
-                    Console.WriteLine("Sign in with Google failed");
+                    var statusCodeString = GoogleSignInStatusCodes.GetStatusCodeString(result.Status.StatusCode);
+                    Console.WriteLine("Sign in with Google failed: {0}", statusCodeString);
                 }
             }
             Finish();

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GoogleSignIn.Plugin.iOS</name>
+    </assembly>
+    <members>
+        <member name="T:GoogleSignIn.Plugin.iOS.GoogleSignInButtonRenderer">
+            <summary>
+            GoogleSignInPlugin Renderer
+            </summary>
+        </member>
+    </members>
+</doc>

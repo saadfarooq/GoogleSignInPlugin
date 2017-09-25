@@ -23,7 +23,7 @@ namespace GoogleSignIn.Plugin.Android
                 SignInButton signInButton = new SignInButton(Context);
                 signInButton.SetColorScheme(SignInButton.ColorDark);
 
-                switch (this.Element.Size)
+                switch (Element.Size)
                 {
                     case GoogleSignInButton.SizeOptions.IconOnly:
                         signInButton.SetSize(SignInButton.SizeIconOnly);
@@ -36,7 +36,7 @@ namespace GoogleSignIn.Plugin.Android
                         break;
                 }
 
-                switch (this.Element.ColorScheme)
+                switch (Element.ColorScheme)
                 {
                     case GoogleSignInButton.ColorSchemeOptions.Dark:
                         signInButton.SetColorScheme(SignInButton.ColorDark);
@@ -58,14 +58,26 @@ namespace GoogleSignIn.Plugin.Android
             MessagingCenter.Subscribe<GoogleSignInActivity, GoogleSignInUser>(this, "Success", (s, args) =>
             {
                 Console.WriteLine("Received GoogleSignInUser object: {0}", args);
-                if (this.Element.Command != null)
+                Element.OnSignIn(new GoogleSignInEventArgs()
                 {
-                    Console.WriteLine("Sending args to SignInButton");
-                    this.Element.Command.Execute(args);
-                }
+                    user = args
+                });
             });
+
+            MessagingCenter.Subscribe<GoogleSignInActivity, String>(this, "Failure", (s, args) =>
+            {
+                Console.WriteLine("Google SignIn Failed");
+
+                Element.OnSignIn(new GoogleSignInEventArgs()
+                {
+                    ErrorString = args
+                });
+            });
+
             Intent intent = new Intent(Forms.Context, typeof(GoogleSignInActivity));
-            intent.PutExtra(GoogleSignInActivity.EXTRA_CLIENT_ID, this.Element.ServerClientId);
+            intent.PutExtra(GoogleSignInActivity.EXTRA_CLIENT_ID, Element.AndroidClientId);
+            intent.PutExtra(GoogleSignInActivity.EXTRA_SERVER_CLIENT_ID, Element.ServerClientId);
+            intent.PutExtra(GoogleSignInActivity.EXTRA_TOKEN_TYPE, Element.TokenType.ToString());
             Forms.Context.StartActivity(intent);
         }
     }

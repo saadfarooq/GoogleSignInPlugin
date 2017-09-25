@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GoogleSignIn.Plugin.Android</name>
+    </assembly>
+    <members>
+        <member name="T:GoogleSignIn.Plugin.Android.GoogleSignInButtonRenderer">
+            <summary>
+            GoogleSignInButton Renderer
+            </summary>
+        </member>
+    </members>
+</doc>
