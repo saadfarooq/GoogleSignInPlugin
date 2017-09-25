@@ -8,10 +8,6 @@ var libraries = new Dictionary<string, string> {
  	{ "./src/GoogleSignInPlugin.sln", "Any" },
 };
 
-var samples = new Dictionary<string, string> {
-	{ "./samples/GoogleSignInSample.sln", "Win" },
-};
-
 var BuildAction = new Action<Dictionary<string, string>> (solutions =>
 {
 
@@ -57,14 +53,8 @@ Task("Libraries").Does(()=>
     BuildAction(libraries);
 });
 
-Task("Samples")
-    .IsDependentOn("Libraries")
-    .Does(()=>
-{
-});
-
 Task ("NuGet")
-	.IsDependentOn ("Samples")
+	.IsDependentOn ("Libraries")
 	.Does (() =>
 {
     if(!DirectoryExists("./Build/nuget/"))

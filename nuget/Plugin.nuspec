@@ -33,15 +33,15 @@
 
     <!--Core-->
     <file src="src\GoogleSignIn.Plugin.Abstractions\bin\Release\GoogleSignIn.Plugin.Abstractions.dll" target="lib\portable-net45+wp80+win8+wpa81\GoogleSignIn.Plugin.Abstractions.dll" />
-    <file src="src\GoogleSignIn.Plugin.Abstractions\bin\Release\GoogleSignIn.Plugin.Abstractions.xml" target="lib\portable-net45+wp80+win8+wpa81\GoogleSignIn.Plugin.Abstractions.xml" />
+    <!--<file src="src\GoogleSignIn.Plugin.Abstractions\bin\Release\GoogleSignIn.Plugin.Abstractions.xml" target="lib\portable-net45+wp80+win8+wpa81\GoogleSignIn.Plugin.Abstractions.xml" />-->
     <file src="src\GoogleSignIn.Plugin.Abstractions\bin\Release\GoogleSignIn.Plugin.Abstractions.pdb" target="lib\portable-net45+wp80+win8+wpa81\GoogleSignIn.Plugin.Abstractions.pdb" />
 
     <!--Xamarin.Android-->
     <file src="src\GoogleSignIn.Plugin.Android\bin\Release\GoogleSignIn.Plugin.Android.dll" target="lib\MonoAndroid10\GoogleSignIn.Plugin.Android.dll" />
-    <file src="src\GoogleSignIn.Plugin.Android\bin\Release\GoogleSignIn.Plugin.Android.xml" target="lib\MonoAndroid10\GoogleSignIn.Plugin.Android.xml" />
+    <!--<file src="src\GoogleSignIn.Plugin.Android\bin\Release\GoogleSignIn.Plugin.Android.xml" target="lib\MonoAndroid10\GoogleSignIn.Plugin.Android.xml" />-->
     <file src="src\GoogleSignIn.Plugin.Android\bin\Release\GoogleSignIn.Plugin.Android.pdb" target="lib\MonoAndroid10\GoogleSignIn.Plugin.Android.pdb" />
     <file src="src\GoogleSignIn.Plugin.Abstractions\bin\Release\GoogleSignIn.Plugin.Abstractions.dll" target="lib\MonoAndroid10\GoogleSignIn.Plugin.Abstractions.dll" />
-    <file src="src\GoogleSignIn.Plugin.Abstractions\bin\Release\GoogleSignIn.Plugin.Abstractions.xml" target="lib\MonoAndroid10\GoogleSignIn.Plugin.Abstractions.xml" />
+    <!--<file src="src\GoogleSignIn.Plugin.Abstractions\bin\Release\GoogleSignIn.Plugin.Abstractions.xml" target="lib\MonoAndroid10\GoogleSignIn.Plugin.Abstractions.xml" />-->
     <file src="src\GoogleSignIn.Plugin.Abstractions\bin\Release\GoogleSignIn.Plugin.Abstractions.pdb" target="lib\MonoAndroid10\GoogleSignIn.Plugin.Abstractions.pdb" />
 
     <!--Xamarin.iOS Unified-->
@@ -49,7 +49,7 @@
     <file src="src\GoogleSignIn.Plugin.iOS\bin\iPhone\Release\GoogleSignIn.Plugin.iOS.xml" target="lib\Xamarin.iOS10\GoogleSignIn.Plugin.iOS.xml" />
     <!--<file src="src\GoogleSignIn.Plugin.iOS\bin\iPhone\Release\GoogleSignIn.Plugin.iOS.pdb" target="lib\Xamarin.iOS10\GoogleSignIn.Plugin.pdb" />-->
     <file src="src\GoogleSignIn.Plugin.Abstractions\bin\Release\GoogleSignIn.Plugin.Abstractions.dll" target="lib\Xamarin.iOS10\GoogleSignIn.Plugin.Abstractions.dll" />
-    <file src="src\GoogleSignIn.Plugin.Abstractions\bin\Release\GoogleSignIn.Plugin.Abstractions.xml" target="lib\Xamarin.iOS10\GoogleSignIn.Plugin.Abstractions.xml" />
+    <!--<file src="src\GoogleSignIn.Plugin.Abstractions\bin\Release\GoogleSignIn.Plugin.Abstractions.xml" target="lib\Xamarin.iOS10\GoogleSignIn.Plugin.Abstractions.xml" />-->
     <file src="src\GoogleSignIn.Plugin.Abstractions\bin\Release\GoogleSignIn.Plugin.Abstractions.pdb" target="lib\Xamarin.iOS10\GoogleSignIn.Plugin.Abstractions.pdb" />
 
   </files>
